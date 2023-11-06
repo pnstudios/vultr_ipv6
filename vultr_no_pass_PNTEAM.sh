@@ -80,12 +80,12 @@ upload_proxy() {
     echo "Password: ${PASS}"
 
 }
+test=()
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo """/""/$IP4/$port/$(gen64 $IP6)"
+        echo "$test/$test/$IP4/$port/$(gen64 $IP6)"
     done
 }
-
 gen_iptables() {
     cat <<EOF
     $(awk -F "/" '{print "iptables -I INPUT -p tcp --dport " $4 "  -m state --state NEW -j ACCEPT"}' ${WORKDATA}) 
