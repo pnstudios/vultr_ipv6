@@ -55,7 +55,7 @@ setuid 65535
 stacksize 6291456 
 flush
 auth strong
-users pnteam:CL:pnteam123
+users pnteam:CL:pnteam@@2024
 $(awk -F "/" '{print "auth strong\n" \
 "allow " $1 "\n" \
 "proxy -6 -n -a -p" $4 " -i" $3 " -e"$5"\n" \
