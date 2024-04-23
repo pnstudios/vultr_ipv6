@@ -87,13 +87,13 @@ upload_proxy() {
 }
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "pnteam/pnteam123/$IP4/$port/$(gen64 $IP6)"
+        echo "pnteam/pnteam@@2024/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
 gen_sock_data() {
     seq $FIRST_SOCK_PORT $LAST_SOCK_PORT | while read port; do
-        echo "pnteam/pnteam123/$IP4/$port/$(gen64 $IP6)"
+        echo "pnteam/pnteam@@2024/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
@@ -137,10 +137,10 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-FIRST_PORT=50001
-LAST_PORT=50003
-FIRST_SOCK_PORT=60001
-LAST_SOCK_PORT=60003
+FIRST_PORT=10001
+LAST_PORT=12001
+FIRST_SOCK_PORT=50001
+LAST_SOCK_PORT=52001
 
 gen_data >$WORKDIR/data.txt
 gen_sock_data >$WORKDIR/sock.txt
