@@ -82,7 +82,7 @@ upload_proxy() {
 }
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "pnteam/pnteam123/$IP4/$port/$(gen64 $IP6)"
+        echo "pnteam/pnteam@@2024/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
